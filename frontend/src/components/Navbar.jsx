@@ -34,7 +34,6 @@ const Navbar = () => {
               <span>soltexisas@gmail.com</span>
             </a>
           </div>
-          <span className="text-secondary-400">NIT: 901.138.435-2</span>
         </div>
       </div>
       

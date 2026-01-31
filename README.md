@@ -109,7 +109,7 @@ La aplicación estará disponible en:
 ## 📞 Contacto
 
 **SOLTEXI SAS**  
-NIT: 901.138.435-2
+
 
 - 📍 Calle 6a No 22-36, Oficina 101, Aguachica, Cesar
 - 📧 soltexisas@gmail.com

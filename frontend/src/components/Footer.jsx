@@ -29,7 +29,7 @@ const Footer = () => {
               </div>
               <div>
                 <span className="font-heading font-bold text-xl">SOLTEXI SAS</span>
-                <span className="block text-xs text-secondary-400">NIT: 901.138.435-2</span>
+      
               </div>
             </div>
             
@@ -137,9 +137,20 @@ const Footer = () => {
       {/* Bottom bar */}
       <div className="border-t border-secondary-800">
         <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-secondary-400 text-sm text-center md:text-left">
-            © {currentYear} SOLTEXI SAS. Todos los derechos reservados.
-          </p>
+          <div className="text-center md:text-left">
+            <p className="text-secondary-400 text-sm">
+              © {currentYear} SOLTEXI SAS. Todos los derechos reservados.
+            </p>
+            <p className="text-secondary-500 text-xs mt-1">
+              Desarrollado por{' '}
+              <a 
+                href="mailto:Jhon.a15@outlook.com" 
+                className="text-primary-400 hover:text-primary-300 transition-colors"
+              >
+                Jhon Santos
+              </a>
+            </p>
+          </div>
           
           <div className="flex items-center gap-6 text-sm">
             <a href="#" className="text-secondary-400 hover:text-primary-400 transition-colors">
