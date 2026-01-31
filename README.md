@@ -25,9 +25,47 @@ Sitio web informativo para **SOLTEXI SAS**, empresa especializada en consultorí
 ## 🏗️ Estructura del Proyecto
 
 ```
-soltexi-platform/
-├── frontend/               # SPA React + Vite
-│   ├── src/
+Soltexisas/
+├── src/                    # Código fuente React + Vite
+│   ├── components/         # Componentes React
+│   ├── pages/              # Páginas
+│   └── main.jsx            # Punto de entrada
+├── public/                 # Archivos estáticos
+├── index.html              # HTML principal
+├── package.json            # Dependencias
+├── vite.config.js          # Configuración Vite
+├── tailwind.config.js      # Configuración Tailwind
+├── render.yaml             # Configuración despliegue
+└── README.md
+```
+
+---
+
+## 🚀 Instalación Local
+
+### Requisitos previos
+- Node.js 18+
+- npm o yarn
+
+### Instalación
+
+```bash
+# Navegar al directorio del proyecto
+cd Soltexisas
+
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm run dev
+```
+
+La aplicación estará disponible en:
+- **Frontend:** http://localhost:5173
+
+---
+
+## 🛠️ Scripts disponibles
 │   │   ├── components/     # Componentes React
 │   │   ├── pages/          # Páginas
 │   │   └── services/       # Servicios (simulados)

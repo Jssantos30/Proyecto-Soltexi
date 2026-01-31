@@ -7,11 +7,10 @@
 services:
   # ============ FRONTEND (Static Site) ============
   - type: web
-    name: soltexi-frontend
+    name: soltexisas
     runtime: static
     region: ohio
     plan: starter
-    rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     headers:

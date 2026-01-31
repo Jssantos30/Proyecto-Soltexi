@@ -10,7 +10,10 @@ import {
   Recycle,
   HardHat,
   Wrench,
-  AlertTriangle
+  AlertTriangle,
+  MessageCircle,
+  Phone,
+  ArrowRight
 } from 'lucide-react'
 
 const services = [
@@ -189,13 +192,45 @@ const ServicesGrid = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
-          <p className="text-secondary-600 mb-6">
-            ¿Necesita un servicio personalizado? Contáctenos para una evaluación gratuita.
-          </p>
-          <a href="#contacto" className="btn-primary inline-flex items-center gap-2">
-            Solicitar Cotización
-          </a>
+        <div className="mt-20">
+          <div className="bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0 bg-white/5" style={{backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '20px 20px'}}></div>
+            </div>
+            
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="text-center lg:text-left">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                  ¿Necesita un servicio personalizado?
+                </h3>
+                <p className="text-primary-100 text-lg max-w-xl">
+                  Contáctenos ahora para una evaluación gratuita. Nuestro equipo de expertos 
+                  está listo para ayudarle a alcanzar sus objetivos.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href="https://wa.me/573153454884?text=Hola%20SOLTEXI%20SAS,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20para%20sus%20servicios."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-3 bg-white text-primary-700 font-bold px-8 py-4 rounded-xl hover:bg-primary-50 hover:scale-105 transition-all duration-300 shadow-lg"
+                >
+                  <MessageCircle size={24} />
+                  Solicitar Cotización
+                  <ArrowRight size={20} />
+                </a>
+                <a 
+                  href="tel:+573153454884"
+                  className="inline-flex items-center justify-center gap-3 bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300"
+                >
+                  <Phone size={22} />
+                  Llamar Ahora
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
