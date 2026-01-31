@@ -1,14 +1,31 @@
 import { MapPin, CheckCircle } from 'lucide-react'
 
 const departments = [
-  { name: 'Cesar', cities: ['Aguachica', 'Valledupar', 'La Jagua de Ibirico'], main: true },
-  { name: 'Magdalena', cities: ['Santa Marta', 'Ciénaga', 'Fundación'] },
-  { name: 'Atlántico', cities: ['Barranquilla', 'Soledad', 'Malambo'] },
-  { name: 'Santander', cities: ['Bucaramanga', 'Barrancabermeja', 'Floridablanca'] },
+  // Costa Caribe
+  { name: 'Cesar', cities: ['Valledupar', 'Aguachica', 'San Martín', 'San Alberto'], main: true },
+  { name: 'Guajira', cities: ['Riohacha', 'Maicao', 'Uribia', 'Mushaisa'] },
+  { name: 'Magdalena', cities: ['Santa Marta', 'Fundación'] },
+  { name: 'Atlántico', cities: ['Barranquilla', 'Sabanalarga', 'Soledad'] },
+  { name: 'Bolívar', cities: ['Cartagena', 'Arjona'] },
+  { name: 'Córdoba', cities: ['Montería', 'Sahagún', 'Planeta Rica'] },
+  // Nororiente
   { name: 'Norte de Santander', cities: ['Cúcuta', 'Ocaña', 'Pamplona'] },
-  { name: 'Antioquia', cities: ['Medellín', 'Envigado', 'Bello'] },
-  { name: 'Bogotá D.C.', cities: ['Bogotá', 'Soacha', 'Zipaquirá'] },
-  { name: 'Bolívar', cities: ['Cartagena', 'Magangué', 'Turbaco'] },
+  { name: 'Santander', cities: ['Bucaramanga', 'Barrancabermeja', 'Sabana de Torres'] },
+  { name: 'Boyacá', cities: ['Tunja', 'Duitama', 'Sogamoso'] },
+  // Centro
+  { name: 'Bogotá', cities: ['Bogotá'] },
+  { name: 'Cundinamarca', cities: ['Bogotá'] },
+  // Eje Cafetero
+  { name: 'Risaralda', cities: ['Pereira', 'Manizales', 'Armenia', 'La Dorada'] },
+  { name: 'Tolima', cities: ['Ibagué', 'Espinal'] },
+  { name: 'Antioquia', cities: ['Medellín', 'Apartadó', 'Bello'] },
+  // Suroccidente
+  { name: 'Valle del Cauca', cities: ['Cali', 'Palmira', 'Yumbo'] },
+  { name: 'Cauca', cities: ['Popayán'] },
+  { name: 'Nariño', cities: ['Pasto', 'Ipiales'] },
+  // Llanos y Orinoquía
+  { name: 'Meta', cities: ['Villavicencio', 'Puerto Gaitán'] },
+  { name: 'Casanare', cities: ['Yopal'] },
 ]
 
 const Coverage = () => {
@@ -77,7 +94,7 @@ const Coverage = () => {
 
           {/* Departments grid */}
           <div className="lg:col-span-2">
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 max-h-[600px] overflow-y-auto pr-2">
               {departments.map((dept, index) => (
                 <div 
                   key={index}
@@ -111,8 +128,8 @@ const Coverage = () => {
         {/* Stats bar */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { value: '8', label: 'Departamentos' },
-            { value: '24+', label: 'Ciudades' },
+            { value: '19', label: 'Departamentos' },
+            { value: '50+', label: 'Ciudades' },
             { value: '500+', label: 'Clientes atendidos' },
             { value: '100%', label: 'Cobertura virtual' },
           ].map((stat, index) => (

@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, Award, CheckCircle } from 'lucide-react'
+import { ArrowRight, Shield, Award, CheckCircle, Download } from 'lucide-react'
 
 const Hero = () => {
   return (
@@ -39,6 +39,14 @@ const Hero = () => {
               </a>
               <a href="#servicios" className="btn-outline !border-white !text-white hover:!bg-white hover:!text-secondary-900">
                 Ver Servicios
+              </a>
+              <a 
+                href="/portafolio-soltexi.pdf" 
+                download="Portafolio SOLTEXI SAS.pdf"
+                className="btn-outline !border-primary-400 !text-primary-400 hover:!bg-primary-400 hover:!text-white flex items-center justify-center gap-2"
+              >
+                <Download size={18} />
+                Portafolio
               </a>
             </div>
             
