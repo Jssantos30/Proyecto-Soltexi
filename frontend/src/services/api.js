@@ -1,82 +1,110 @@
-import axios from 'axios'
+/**
+ * API Service - Modo Informativo
+ * 
+ * Esta aplicación web es únicamente informativa.
+ * Las funciones de API simulan respuestas exitosas para mantener
+ * la funcionalidad de la interfaz de usuario.
+ */
 
-// Configuración base de Axios
-const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
+// ============ UTILIDADES ============
 
-// Interceptor para manejo de errores
-api.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    const message = error.response?.data?.detail || 'Error de conexión'
-    console.error('API Error:', message)
-    return Promise.reject(error)
-  }
-)
+/**
+ * Genera un número de radicado simulado
+ * @returns {string} Número de radicado en formato PQRS-YYYYMMDD-XXXX
+ */
+const generateTrackingNumber = () => {
+  const date = new Date()
+  const dateStr = date.toISOString().slice(0, 10).replace(/-/g, '')
+  const random = Math.floor(1000 + Math.random() * 9000)
+  return `PQRS-${dateStr}-${random}`
+}
+
+/**
+ * Simula un delay de red para mejor experiencia de usuario
+ * @param {number} ms - Milisegundos de delay
+ */
+const simulateNetworkDelay = (ms = 800) => {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
 
 // ============ CANDIDATOS ============
 
 /**
- * Registrar nuevo candidato con hoja de vida
- * @param {FormData} formData - Datos del formulario incluyendo archivo PDF
+ * Simula el registro de un candidato
+ * @param {FormData} formData - Datos del formulario
+ * @returns {Promise<Object>} Respuesta simulada exitosa
  */
 export const createCandidate = async (formData) => {
-  const response = await api.post('/candidates', formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
-  })
-  return response.data
+  await simulateNetworkDelay()
+  
+  return {
+    success: true,
+    message: 'Hoja de vida recibida correctamente',
+    id: Date.now()
+  }
 }
 
 /**
- * Obtener lista de candidatos
- * @param {Object} params - Parámetros de paginación y búsqueda
+ * Simula obtener lista de candidatos
+ * @returns {Promise<Array>} Lista vacía (modo informativo)
  */
-export const getCandidates = async (params = {}) => {
-  const response = await api.get('/candidates', { params })
-  return response.data
+export const getCandidates = async () => {
+  await simulateNetworkDelay()
+  return []
 }
 
 /**
- * Obtener URL de descarga del CV
- * @param {number} candidateId - ID del candidato
+ * Obtener URL de descarga del CV (no disponible en modo informativo)
+ * @returns {string} URL placeholder
  */
-export const getCvDownloadUrl = (candidateId) => {
-  return `${api.defaults.baseURL}/candidates/${candidateId}/download`
+export const getCvDownloadUrl = () => {
+  return '#'
 }
 
 // ============ PQRS ============
 
 /**
- * Crear nueva PQRS
+ * Simula la creación de una PQRS
  * @param {Object} pqrsData - Datos de la PQRS
+ * @returns {Promise<Object>} Respuesta simulada con número de radicado
  */
 export const createPQRS = async (pqrsData) => {
-  const response = await api.post('/pqrs', pqrsData)
-  return response.data
+  await simulateNetworkDelay()
+  
+  return {
+    success: true,
+    tracking_number: generateTrackingNumber(),
+    message: 'PQRS registrada correctamente'
+  }
 }
 
 /**
- * Consultar PQRS por número de radicado
+ * Simula la consulta de una PQRS
  * @param {string} trackingNumber - Número de radicado
+ * @returns {Promise<Object>} Información simulada de la PQRS
  */
 export const trackPQRS = async (trackingNumber) => {
-  const response = await api.get(`/pqrs/track/${trackingNumber}`)
-  return response.data
+  await simulateNetworkDelay()
+  
+  // Simular que no se encuentra el radicado (comportamiento esperado en modo informativo)
+  throw new Error('PQRS no encontrada')
 }
 
 /**
- * Obtener lista de PQRS
- * @param {Object} params - Parámetros de paginación y filtros
+ * Simula obtener lista de PQRS
+ * @returns {Promise<Array>} Lista vacía (modo informativo)
  */
-export const getPQRSList = async (params = {}) => {
-  const response = await api.get('/pqrs', { params })
-  return response.data
+export const getPQRSList = async () => {
+  await simulateNetworkDelay()
+  return []
 }
 
-export default api
+// Exportación por defecto para compatibilidad
+export default {
+  createCandidate,
+  getCandidates,
+  getCvDownloadUrl,
+  createPQRS,
+  trackPQRS,
+  getPQRSList
+}

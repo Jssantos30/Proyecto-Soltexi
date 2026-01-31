@@ -122,7 +122,7 @@ const CandidateForm = () => {
       setFile(null)
       
     } catch (error) {
-      const errorMessage = error.response?.data?.detail || 'Error al enviar. Intente nuevamente.'
+      const errorMessage = error.message || 'Error al enviar. Intente nuevamente.'
       toast.error(errorMessage)
     } finally {
       setLoading(false)

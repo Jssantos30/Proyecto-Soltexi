@@ -1,33 +1,10 @@
 # SOLTEXI SAS - Render Blueprint
 # Infraestructura como Código para despliegue en Render
 # https://render.com/docs/infrastructure-as-code
+# 
+# Nota: Esta es una aplicación web informativa (solo frontend)
 
 services:
-  # ============ BACKEND API (FastAPI) ============
-  - type: web
-    name: soltexi-backend
-    runtime: python
-    region: ohio  # us-east
-    plan: starter  # Cambiar a 'standard' en producción
-    rootDir: backend
-    buildCommand: pip install -r requirements.txt
-    startCommand: bash start.sh
-    healthCheckPath: /api/health
-    envVars:
-      - key: PYTHON_VERSION
-        value: "3.11.7"
-      - key: DATABASE_URL
-        fromDatabase:
-          name: soltexi-db
-          property: connectionString
-      - key: SECRET_KEY
-        generateValue: true
-      - key: DEBUG
-        value: "false"
-      - key: CORS_ORIGINS
-        value: '["https://soltexi-frontend.onrender.com"]'
-    autoDeploy: true
-
   # ============ FRONTEND (Static Site) ============
   - type: web
     name: soltexi-frontend
@@ -51,16 +28,4 @@ services:
     envVars:
       - key: NODE_VERSION
         value: "20"
-      - key: VITE_API_URL
-        value: "https://soltexi-backend.onrender.com/api"
     autoDeploy: true
-
-# ============ DATABASE (PostgreSQL) ============
-databases:
-  - name: soltexi-db
-    region: ohio
-    plan: starter  # Cambiar a 'standard' en producción
-    databaseName: soltexi_production
-    user: soltexi_admin
-    postgresMajorVersion: "15"
-    ipAllowList: []  # Sin restricciones de IP (Render maneja seguridad)
