@@ -1,4 +1,4 @@
-import { CheckCircle, Mail, FileText, Phone, MapPin } from 'lucide-react'
+import { CheckCircle, Mail, FileText, Phone, MapPin, Users, Briefcase } from 'lucide-react'
 
 const CandidateForm = () => {
   const handleEmailClick = () => {
@@ -6,79 +6,80 @@ const CandidateForm = () => {
   }
 
   return (
-    <section id="trabaje-con-nosotros" className="py-20 bg-white">
+    <section id="trabaje-con-nosotros" className="py-12 bg-gradient-to-b from-white to-secondary-50/30">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Info side */}
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
+          {/* Info side - más compacto */}
           <div>
-            <span className="inline-block bg-primary-100 text-primary-600 text-sm font-semibold px-4 py-2 rounded-full mb-4">
+            <span className="inline-flex items-center gap-2 bg-primary-100 text-primary-600 text-xs font-semibold px-3 py-1.5 rounded-full mb-3">
+              <Users size={14} />
               Únase a Nuestro Equipo
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-4">
               Trabaje con Nosotros
             </h2>
-            <p className="text-secondary-600 mb-8 leading-relaxed">
+            <p className="text-secondary-600 text-sm mb-6 leading-relaxed">
               En SOLTEXI SAS buscamos profesionales comprometidos con la excelencia 
               en seguridad, salud ocupacional y sistemas de gestión. Si comparte nuestra 
               pasión por generar impacto positivo en las empresas colombianas, 
               ¡queremos conocerle!
             </p>
             
-            <div className="space-y-4">
+            <div className="grid grid-cols-2 gap-3">
               {[
-                'Profesionales en SST, Ingeniería y afines',
-                'Técnicos en seguridad industrial',
-                'Auditores de sistemas de gestión',
-                'Consultores con experiencia en HSEQ'
+                'Profesionales en SST',
+                'Técnicos en seguridad',
+                'Auditores de gestión',
+                'Consultores HSEQ'
               ].map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle className="text-primary-600 flex-shrink-0" size={20} />
-                  <span className="text-secondary-700">{item}</span>
+                <div key={index} className="flex items-center gap-2 bg-white p-2.5 rounded-lg border border-secondary-100 shadow-sm hover:shadow-md transition-shadow">
+                  <CheckCircle className="text-primary-600 flex-shrink-0" size={16} />
+                  <span className="text-secondary-700 text-xs font-medium">{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Contact card side */}
-          <div className="card bg-secondary-50 border border-secondary-200">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="text-primary-600" size={36} />
+          {/* Contact card side - más compacto */}
+          <div className="bg-secondary-50 rounded-xl border border-secondary-200 p-5 shadow-lg">
+            <div className="text-center mb-5">
+              <div className="w-14 h-14 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Mail className="text-primary-600" size={26} />
               </div>
-              <h3 className="text-xl font-bold text-secondary-900 mb-2">
+              <h3 className="text-lg font-bold text-secondary-900 mb-1">
                 Envíe su Hoja de Vida
               </h3>
-              <p className="text-secondary-600">
-                Para aplicar a nuestras vacantes, envíe su hoja de vida al siguiente correo electrónico:
+              <p className="text-secondary-600 text-xs">
+                Para aplicar a nuestras vacantes, envíe su hoja de vida al siguiente correo:
               </p>
             </div>
 
             {/* Email destacado */}
-            <div className="bg-white rounded-xl p-6 border border-secondary-200 mb-6">
-              <p className="text-sm text-secondary-500 mb-2 text-center">Correo de contacto:</p>
+            <div className="bg-white rounded-lg p-4 border border-secondary-200 mb-4">
+              <p className="text-xs text-secondary-500 mb-1 text-center">Correo de contacto:</p>
               <a 
                 href="mailto:soltexisas@gmail.com" 
-                className="text-2xl font-bold text-primary-600 hover:text-primary-700 transition-colors block text-center"
+                className="text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors block text-center"
               >
                 soltexisas@gmail.com
               </a>
             </div>
 
-            {/* Instrucciones */}
-            <div className="space-y-4 mb-8">
-              <h4 className="font-semibold text-secondary-900">En su correo incluya:</h4>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <FileText className="text-primary-600 flex-shrink-0 mt-0.5" size={18} />
-                  <span className="text-secondary-600">Hoja de vida actualizada (PDF)</span>
+            {/* Instrucciones - más compactas */}
+            <div className="mb-5">
+              <h4 className="font-semibold text-secondary-900 text-sm mb-2">En su correo incluya:</h4>
+              <div className="grid grid-cols-1 gap-2">
+                <div className="flex items-center gap-2 text-secondary-600 text-xs">
+                  <FileText className="text-primary-600 flex-shrink-0" size={14} />
+                  <span>Hoja de vida actualizada (PDF)</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <Phone className="text-primary-600 flex-shrink-0 mt-0.5" size={18} />
-                  <span className="text-secondary-600">Número de teléfono de contacto</span>
+                <div className="flex items-center gap-2 text-secondary-600 text-xs">
+                  <Phone className="text-primary-600 flex-shrink-0" size={14} />
+                  <span>Número de teléfono de contacto</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <MapPin className="text-primary-600 flex-shrink-0 mt-0.5" size={18} />
-                  <span className="text-secondary-600">Ciudad de residencia</span>
+                <div className="flex items-center gap-2 text-secondary-600 text-xs">
+                  <MapPin className="text-primary-600 flex-shrink-0" size={14} />
+                  <span>Ciudad de residencia</span>
                 </div>
               </div>
             </div>
@@ -86,14 +87,14 @@ const CandidateForm = () => {
             {/* Botón de enviar email */}
             <button
               onClick={handleEmailClick}
-              className="btn-primary w-full flex items-center justify-center gap-2"
+              className="btn-primary w-full flex items-center justify-center gap-2 py-3 text-sm"
             >
-              <Mail size={20} />
+              <Mail size={18} />
               Enviar Correo Electrónico
             </button>
 
             {/* Nota legal */}
-            <p className="text-xs text-secondary-400 mt-4 text-center">
+            <p className="text-[10px] text-secondary-400 mt-3 text-center leading-relaxed">
               Al enviar su información, acepta nuestra política de tratamiento de datos 
               personales de acuerdo con la Ley 1581 de 2012.
             </p>

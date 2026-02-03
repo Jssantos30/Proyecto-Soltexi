@@ -1,39 +1,39 @@
-import { Mail, FileText, Clock, Shield, MessageSquare, HelpCircle, AlertTriangle, ThumbsUp, Lightbulb } from 'lucide-react'
+import { Mail, FileText, Clock, Shield, MessageSquare, HelpCircle, AlertTriangle, ThumbsUp, Lightbulb, Headphones } from 'lucide-react'
 
 const PQRSForm = () => {
   const pqrsTypes = [
     { 
       type: 'Petición', 
       icon: HelpCircle,
-      description: 'Solicitud de información, documentos o servicios',
+      description: 'Solicitud de información',
       response: '15 días hábiles',
       color: 'bg-blue-100 text-blue-600'
     },
     { 
       type: 'Queja', 
       icon: MessageSquare,
-      description: 'Inconformidad con la conducta o actuación de un funcionario',
+      description: 'Inconformidad',
       response: '15 días hábiles',
       color: 'bg-orange-100 text-orange-600'
     },
     { 
       type: 'Reclamo', 
       icon: AlertTriangle,
-      description: 'Exigencia por incumplimiento o irregularidad en el servicio',
+      description: 'Exigencia de servicio',
       response: '15 días hábiles',
       color: 'bg-red-100 text-red-600'
     },
     { 
       type: 'Sugerencia', 
       icon: Lightbulb,
-      description: 'Propuesta para mejorar nuestros servicios',
+      description: 'Propuesta de mejora',
       response: '15 días hábiles',
       color: 'bg-yellow-100 text-yellow-600'
     },
     { 
       type: 'Felicitación', 
       icon: ThumbsUp,
-      description: 'Reconocimiento por un buen servicio recibido',
+      description: 'Reconocimiento',
       response: 'Agradecimiento',
       color: 'bg-green-100 text-green-600'
     }
@@ -59,140 +59,137 @@ const PQRSForm = () => {
   }
 
   return (
-    <section id="pqrs" className="py-20 bg-secondary-900">
+    <section id="pqrs" className="py-12 bg-secondary-900">
       <div className="max-w-5xl mx-auto px-4">
-        {/* Section header */}
-        <div className="text-center mb-12">
-          <span className="inline-block bg-primary-600/20 text-primary-400 text-sm font-semibold px-4 py-2 rounded-full mb-4">
+        {/* Section header - más compacto */}
+        <div className="text-center mb-8">
+          <span className="inline-flex items-center gap-2 bg-primary-600/20 text-primary-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-3">
+            <Headphones size={14} />
             Atención al Cliente
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
             Sistema PQRS
           </h2>
-          <p className="text-secondary-300 max-w-2xl mx-auto">
+          <p className="text-secondary-300 text-sm max-w-2xl mx-auto">
             Peticiones, Quejas, Reclamos, Sugerencias y Felicitaciones. 
             Su opinión es importante para mejorar nuestros servicios.
           </p>
         </div>
 
-        {/* Main card */}
-        <div className="card bg-white mb-8">
+        {/* Main card - más compacto */}
+        <div className="bg-white rounded-xl p-5 shadow-lg mb-6">
           {/* Header con email */}
-          <div className="text-center pb-8 border-b border-secondary-200">
-            <div className="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Mail className="text-primary-600" size={36} />
+          <div className="text-center pb-5 border-b border-secondary-200">
+            <div className="w-14 h-14 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <Mail className="text-primary-600" size={26} />
             </div>
-            <h3 className="text-xl font-bold text-secondary-900 mb-2">
+            <h3 className="text-lg font-bold text-secondary-900 mb-1">
               Envíe su PQRS por Correo Electrónico
             </h3>
-            <p className="text-secondary-600 mb-4">
+            <p className="text-secondary-600 text-xs mb-2">
               Para radicar su solicitud, envíe un correo a:
             </p>
             <a 
               href="mailto:soltexisas@gmail.com" 
-              className="text-2xl font-bold text-primary-600 hover:text-primary-700 transition-colors"
+              className="text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors"
             >
               soltexisas@gmail.com
             </a>
           </div>
 
-          {/* Tipos de PQRS */}
-          <div className="py-8">
-            <h4 className="font-semibold text-secondary-900 mb-6 text-center">
-              Seleccione el tipo de solicitud para abrir su cliente de correo:
+          {/* Tipos de PQRS - más compactos */}
+          <div className="py-5">
+            <h4 className="font-semibold text-secondary-900 text-sm mb-4 text-center">
+              Seleccione el tipo de solicitud:
             </h4>
-            <div className="grid md:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               {pqrsTypes.map((item) => {
                 const IconComponent = item.icon
                 return (
                   <button
                     key={item.type}
                     onClick={() => handleEmailClick(item.type)}
-                    className="p-4 rounded-xl border-2 border-secondary-200 hover:border-primary-500 hover:shadow-lg transition-all text-center group"
+                    className="p-3 rounded-lg border-2 border-secondary-200 hover:border-primary-500 hover:shadow-md transition-all text-center group"
                   >
-                    <div className={`w-12 h-12 rounded-full ${item.color} flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform`}>
-                      <IconComponent size={24} />
+                    <div className={`w-10 h-10 rounded-full ${item.color} flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform`}>
+                      <IconComponent size={18} />
                     </div>
-                    <span className="font-semibold text-secondary-900 block mb-1">{item.type}</span>
-                    <span className="text-xs text-secondary-500">{item.description}</span>
+                    <span className="font-semibold text-secondary-900 block text-sm">{item.type}</span>
+                    <span className="text-[10px] text-secondary-500">{item.description}</span>
                   </button>
                 )
               })}
             </div>
           </div>
 
-          {/* Información requerida */}
-          <div className="py-8 border-t border-secondary-200">
-            <h4 className="font-semibold text-secondary-900 mb-4 flex items-center gap-2">
-              <FileText className="text-primary-600" size={20} />
-              Información requerida en su solicitud:
+          {/* Información requerida - más compacta */}
+          <div className="py-4 border-t border-secondary-200">
+            <h4 className="font-semibold text-secondary-900 text-sm mb-3 flex items-center gap-2">
+              <FileText className="text-primary-600" size={16} />
+              Información requerida:
             </h4>
-            <div className="grid md:grid-cols-2 gap-4">
-              <ul className="space-y-2 text-secondary-600">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary-600 font-bold">•</span>
-                  Nombre completo del solicitante
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary-600 font-bold">•</span>
-                  Número de identificación (CC, NIT)
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary-600 font-bold">•</span>
-                  Dirección de notificación
-                </li>
-              </ul>
-              <ul className="space-y-2 text-secondary-600">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary-600 font-bold">•</span>
-                  Teléfono de contacto
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary-600 font-bold">•</span>
-                  Descripción clara y detallada de la solicitud
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary-600 font-bold">•</span>
-                  Documentos de soporte (si aplica)
-                </li>
-              </ul>
+            <div className="grid grid-cols-2 gap-2 text-xs text-secondary-600">
+              <div className="flex items-center gap-1.5">
+                <span className="text-primary-600 font-bold">•</span>
+                Nombre completo
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-primary-600 font-bold">•</span>
+                Teléfono de contacto
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-primary-600 font-bold">•</span>
+                Número de identificación
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-primary-600 font-bold">•</span>
+                Descripción de la solicitud
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-primary-600 font-bold">•</span>
+                Dirección de notificación
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-primary-600 font-bold">•</span>
+                Documentos de soporte
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Tiempos de respuesta - Ley 1755 de 2015 */}
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
-          <div className="card bg-secondary-800 border border-secondary-700">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Clock className="text-primary-400" size={24} />
+        {/* Tiempos de respuesta y Protección - más compactos */}
+        <div className="grid md:grid-cols-2 gap-4 mb-6">
+          <div className="bg-secondary-800 rounded-lg border border-secondary-700 p-4">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 bg-primary-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Clock className="text-primary-400" size={20} />
               </div>
               <div>
-                <h4 className="font-semibold text-white mb-2">Tiempos de Respuesta</h4>
-                <p className="text-secondary-300 text-sm">
-                  De acuerdo con la <strong>Ley 1755 de 2015</strong>, los términos de respuesta son:
+                <h4 className="font-semibold text-white text-sm mb-1">Tiempos de Respuesta</h4>
+                <p className="text-secondary-300 text-xs mb-2">
+                  De acuerdo con la <strong>Ley 1755 de 2015</strong>:
                 </p>
-                <ul className="mt-3 space-y-1 text-secondary-400 text-sm">
-                  <li>• Peticiones generales: <strong className="text-white">15 días hábiles</strong></li>
+                <ul className="space-y-0.5 text-secondary-400 text-xs">
+                  <li>• Peticiones: <strong className="text-white">15 días hábiles</strong></li>
                   <li>• Consultas: <strong className="text-white">30 días hábiles</strong></li>
-                  <li>• Documentos/información: <strong className="text-white">10 días hábiles</strong></li>
+                  <li>• Documentos: <strong className="text-white">10 días hábiles</strong></li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div className="card bg-secondary-800 border border-secondary-700">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Shield className="text-primary-400" size={24} />
+          <div className="bg-secondary-800 rounded-lg border border-secondary-700 p-4">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 bg-primary-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Shield className="text-primary-400" size={20} />
               </div>
               <div>
-                <h4 className="font-semibold text-white mb-2">Protección de Datos</h4>
-                <p className="text-secondary-300 text-sm">
+                <h4 className="font-semibold text-white text-sm mb-1">Protección de Datos</h4>
+                <p className="text-secondary-300 text-xs">
                   Su información será tratada conforme a la <strong>Ley 1581 de 2012</strong> 
                   de protección de datos personales y nuestra política de privacidad.
                 </p>
-                <p className="mt-3 text-secondary-400 text-sm">
+                <p className="mt-1.5 text-secondary-400 text-xs">
                   Sus datos solo serán utilizados para dar trámite a su solicitud.
                 </p>
               </div>
@@ -200,26 +197,26 @@ const PQRSForm = () => {
           </div>
         </div>
 
-        {/* Seguimiento */}
-        <div className="card bg-white text-center">
-          <h4 className="font-semibold text-secondary-900 mb-2">
+        {/* Seguimiento - más compacto */}
+        <div className="bg-white rounded-lg p-4 text-center">
+          <h4 className="font-semibold text-secondary-900 text-sm mb-1">
             ¿Ya radicó su PQRS?
           </h4>
-          <p className="text-secondary-600 mb-4">
+          <p className="text-secondary-600 text-xs mb-3">
             Para consultar el estado de su solicitud, envíe un correo indicando su número de radicado o 
             comuníquese con nosotros:
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a 
               href="mailto:soltexisas@gmail.com?subject=Consulta estado PQRS&body=Número de radicado:%0D%0ANombre del solicitante:" 
-              className="btn-primary inline-flex items-center gap-2"
+              className="btn-primary inline-flex items-center gap-2 py-2.5 px-5 text-sm"
             >
-              <Mail size={18} />
+              <Mail size={16} />
               Consultar por Correo
             </a>
             <a 
               href="tel:+573153454884" 
-              className="btn-outline inline-flex items-center gap-2"
+              className="btn-outline inline-flex items-center gap-2 py-2.5 px-5 text-sm"
             >
               📞 +57 315 345 4884
             </a>

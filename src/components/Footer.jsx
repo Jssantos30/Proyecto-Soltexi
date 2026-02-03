@@ -24,16 +24,14 @@ const Footer = () => {
           {/* Company info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-2xl">S</span>
-              </div>
-              <div>
-                <span className="font-heading font-bold text-xl">SOLTEXI SAS</span>
-      
-              </div>
+              <img 
+                src="/LOGO tono blanco.png" 
+                alt="SOLTEXI SAS" 
+                className="h-10 w-auto"
+              />
             </div>
             
-            <p className="text-secondary-300 mb-6 leading-relaxed max-w-md">
+            <p className="text-secondary-400 mb-6 leading-relaxed max-w-md text-sm">
               Soluciones Integrales & Consultoría Técnica en HSEQ y Sistemas de Gestión. 
               Comprometidos con la seguridad, la calidad y el medio ambiente de su empresa.
             </p>

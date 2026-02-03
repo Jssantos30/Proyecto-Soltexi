@@ -1,8 +1,8 @@
 import {
   Navbar,
   Hero,
+  AboutSection,
   ServicesGrid,
-  Coverage,
   CandidateForm,
   PQRSForm,
   Footer
@@ -23,11 +23,11 @@ const LandingPage = () => {
         {/* Hero Section - Banner principal */}
         <Hero />
         
+        {/* Sobre Nosotros - Misión, Visión, Valores */}
+        <AboutSection />
+        
         {/* Servicios - Grid de tarjetas */}
         <ServicesGrid />
-        
-        {/* Cobertura - Mapa de presencia */}
-        <Coverage />
         
         {/* Trabaje con Nosotros - Formulario de candidatos */}
         <CandidateForm />

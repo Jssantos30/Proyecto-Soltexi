@@ -12,11 +12,10 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Inicio', href: '#inicio' },
+    { name: 'Nosotros', href: '#nosotros' },
     { name: 'Servicios', href: '#servicios' },
-    { name: 'Cobertura', href: '#cobertura' },
     { name: 'Trabaje con Nosotros', href: '#trabaje-con-nosotros' },
     { name: 'PQRS', href: '#pqrs' },
-    { name: 'Contacto', href: '#contacto' },
   ]
 
   return (
@@ -39,32 +38,30 @@ const Navbar = () => {
       
       {/* Main navbar */}
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-2xl">S</span>
-            </div>
-            <div>
-              <span className="font-heading font-bold text-xl text-secondary-900">SOLTEXI</span>
-              <span className="block text-xs text-secondary-500">Soluciones Integrales & Consultoría</span>
-            </div>
+          <a href="#inicio" className="flex items-center">
+            <img 
+              src="/LOGO FULLCOLOR.png" 
+              alt="SOLTEXI SAS" 
+              className="h-10 md:h-12 w-auto"
+            />
           </a>
           
           {/* Desktop navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-secondary-700 hover:text-primary-600 font-medium transition-colors"
+                className="text-secondary-600 hover:text-primary-600 font-medium text-sm transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary-600 after:transition-all hover:after:w-full"
               >
                 {link.name}
               </a>
             ))}
             <a
               href="#contacto"
-              className="btn-primary"
+              className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2.5 px-5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-sm"
             >
               Solicitar Asesoría
             </a>
