@@ -28,9 +28,9 @@ const Navbar = () => {
               <Phone size={14} />
               <span>+57 317 1896780</span>
             </a>
-            <a href="mailto:soltexisas@gmail.com" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
+            <a href="mailto:info@soltexi.com" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
               <Mail size={14} />
-              <span>soltexisas@gmail.com</span>
+              <span>info@soltexi.com</span>
             </a>
           </div>
         </div>

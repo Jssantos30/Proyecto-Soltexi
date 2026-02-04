@@ -150,8 +150,8 @@ La aplicación estará disponible en:
 
 
 - 📍 Calle 6a No 22-36, Oficina 101, Aguachica, Cesar
-- 📧 soltexisas@gmail.com
-- 📱 +57 315 3454884
+- 📧 info@soltexi.com
+- 📱 +57 317 1896780
 
 ---
 

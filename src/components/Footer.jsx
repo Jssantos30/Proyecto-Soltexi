@@ -114,11 +114,11 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="mailto:soltexisas@gmail.com"
+                  href="mailto:info@soltexi.com"
                   className="flex items-center gap-3 text-secondary-300 hover:text-primary-400 transition-colors"
                 >
                   <Mail size={20} className="flex-shrink-0" />
-                  <span>soltexisas@gmail.com</span>
+                  <span>info@soltexi.com</span>
                 </a>
               </li>
               <li>

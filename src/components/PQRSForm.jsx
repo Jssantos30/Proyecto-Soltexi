@@ -55,7 +55,7 @@ const PQRSForm = () => {
       `---\n` +
       `Nota: De acuerdo con la Ley 1755 de 2015, recibirá respuesta en los términos establecidos por la ley.`
     )
-    window.location.href = `mailto:soltexisas@gmail.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:info@soltexi.com?subject=${subject}&body=${body}`
   }
 
   return (
@@ -90,10 +90,10 @@ const PQRSForm = () => {
               Para radicar su solicitud, envíe un correo a:
             </p>
             <a 
-              href="mailto:soltexisas@gmail.com" 
+              href="mailto:info@soltexi.com" 
               className="text-xl font-bold text-primary-600 hover:text-primary-700 transition-colors"
             >
-              soltexisas@gmail.com
+              info@soltexi.com
             </a>
           </div>
 
@@ -208,7 +208,7 @@ const PQRSForm = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a 
-              href="mailto:soltexisas@gmail.com?subject=Consulta estado PQRS&body=Número de radicado:%0D%0ANombre del solicitante:" 
+              href="mailto:info@soltexi.com?subject=Consulta estado PQRS&body=Número de radicado:%0D%0ANombre del solicitante:" 
               className="btn-primary inline-flex items-center gap-2 py-2.5 px-5 text-sm"
             >
               <Mail size={16} />
