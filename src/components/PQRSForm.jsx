@@ -215,10 +215,10 @@ const PQRSForm = () => {
               Consultar por Correo
             </a>
             <a 
-              href="tel:+573153454884" 
+              href="tel:+573171896780" 
               className="btn-outline inline-flex items-center gap-2 py-2.5 px-5 text-sm"
             >
-              📞 +57 315 345 4884
+              📞 +57 317 1896780
             </a>
           </div>
         </div>

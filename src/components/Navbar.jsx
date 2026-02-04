@@ -24,9 +24,9 @@ const Navbar = () => {
       <div className="bg-secondary-900 text-white py-2 text-sm hidden md:block">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <a href="tel:+573153454884" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
+            <a href="tel:+573171896780" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
               <Phone size={14} />
-              <span>+57 315 3454884</span>
+              <span>+57 317 1896780</span>
             </a>
             <a href="mailto:soltexisas@gmail.com" className="flex items-center gap-2 hover:text-primary-400 transition-colors">
               <Mail size={14} />

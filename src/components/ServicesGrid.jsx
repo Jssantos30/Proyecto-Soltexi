@@ -392,7 +392,7 @@ const ServicesGrid = () => {
               
               <div className="flex flex-col sm:flex-row gap-3">
                 <a 
-                  href="https://wa.me/573153454884?text=Hola%20SOLTEXI%20SAS,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20para%20sus%20servicios."
+                  href="https://wa.me/573171896780?text=Hola%20SOLTEXI%20SAS,%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20para%20sus%20servicios."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 font-bold px-6 py-3 rounded-xl hover:bg-primary-50 hover:scale-105 transition-all duration-300 shadow-lg text-sm"
@@ -402,7 +402,7 @@ const ServicesGrid = () => {
                   <ArrowRight size={16} />
                 </a>
                 <a 
-                  href="tel:+573153454884"
+                  href="tel:+573171896780"
                   className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 transition-all duration-300 text-sm"
                 >
                   <Phone size={18} />
